@@ -1,7 +1,7 @@
 import { NgComponentOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal, VERSION } from '@angular/core';
-import { configs } from '../../../ng-component-outlet-instance-demo/src/app/components-config';
 import { UserFormComponent } from './user-form.component';
+import { configs } from './components-config';
 
 @Component({
   selector: 'app-root',

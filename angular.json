@@ -21,7 +21,6 @@
             "index": "projects/ng-component-outlet-instance-demo/src/index.html",
             "browser": "projects/ng-component-outlet-instance-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/ng-component-outlet-instance-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -79,8 +78,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/ng-component-outlet-instance-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -116,7 +113,6 @@
             "index": "projects/untagged-template-literals-demo/src/index.html",
             "browser": "projects/untagged-template-literals-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/untagged-template-literals-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -174,8 +170,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/untagged-template-literals-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",

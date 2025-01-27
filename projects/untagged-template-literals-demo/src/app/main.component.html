@@ -1,0 +1,20 @@
+<h1>{{ `Version ${description}` }}</h1>
+<p>Choose a user type</p>
+<app-user-form [(userType)]="userType" [(userName)]="userName"
+  [choices]="['Admin', 'User', 'Intruder']" />
+
+@let ct = componentType();
+<ng-container [ngComponentOutlet]="ct.type" 
+  [ngComponentOutletInputs]="inputs()" 
+  #instance="ngComponentOutlet"
+/>
+
+@let componentInstance = instance?.componentInstance;
+<p>Greeting from componentInstance: {{ componentInstance?.getGreeting() }}</p>
+
+@let permissions = componentInstance?.permissions() ?? [];
+@let strPermission = permissions.join(', ');
+@let numPermissions = permissions.length;
+@let permissionUnit = permissions.length > 1 ? 'permissions' : 'permission';
+@let delimiter = permissions.length >= 1 ? ', ' : '';
+{{ `Multiple Interpolations: ${numPermissions} ${permissionUnit}${delimiter}${strPermission}` }}

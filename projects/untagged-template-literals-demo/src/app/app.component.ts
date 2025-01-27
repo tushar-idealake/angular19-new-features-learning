@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgComponentOutlet } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, signal, VERSION } from '@angular/core';
+import { configs } from '../../../ng-component-outlet-instance-demo/src/app/components-config';
+import { UserFormComponent } from './user-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [NgComponentOutlet, UserFormComponent],
+  templateUrl: `./main.component.html`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'untaggedTemplateLiteralsDemo';
+  // Credit: https://www.linkedin.com/feed/update/urn:li:activity:7289095895512498176/
+
+  description = `${VERSION.full} - Untagged Template Literals`;
+
+  userName = signal('N/A');
+  userType = signal<"user" | "admin" | "intruder">('user');
+
+  componentType = computed(() => configs[this.userType()]);
+  inputs = computed(() => ({
+    permissions: this.componentType().permissions,
+    name: this.userName(),
+    type: this.userType(),
+  }));
 }

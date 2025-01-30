@@ -1,6 +1,11 @@
 <!-- Template string with pipe -->
-<!-- <h2>{{ `${type() | titlecase} Component` }}</h2> -->
-<h2>{{ type() | titlecase }} Component</h2>
+<!-- <h2 class="{{ `color-${ type() }` }}">{{ `${type() | titlecase} Component` }}</h2> -->
+@let c = 'color-' + type();
+<h2 [class]="c">{{ type() | titlecase }} Component</h2>
+
+<!-- <h2 style="{{ `color: ${color()}` }}">{{ `${type() | titlecase} Component` }}</h2> -->
+<h2 [style.color]="color()">{{ type() | titlecase }} Component</h2>
+
 <p>Name: {{ name() }}</p>
 
 <h2>Permissions</h2>

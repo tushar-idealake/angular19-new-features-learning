@@ -1,5 +1,4 @@
 <h1>{{ `Version ${description}` }}</h1>
-<h1>Version {{ description }}</h1>
 <p>Choose a user type</p>
 <app-user-form [(userType)]="userType" [(userName)]="userName"
   [choices]="['Admin', 'User', 'Intruder']" />
@@ -18,5 +17,4 @@
 @let numPermissions = permissions.length;
 @let permissionUnit = permissions.length > 1 ? 'permissions' : 'permission';
 @let delimiter = permissions.length >= 1 ? ', ' : '';
-<!-- {{ `Multiple Interpolations: ${numPermissions} ${permissionUnit}${delimiter}${strPermission}` }} -->
-Multiple Interpolations: {{ numPermissions }} {{permissionUnit}}{{delimiter}}{{ strPermission }}
+{{ `Multiple Interpolations: ${numPermissions} ${permissionUnit}${delimiter}${strPermission}` }}

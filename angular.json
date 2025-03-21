@@ -503,7 +503,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ng-router-outlet-data-demo",
+            "outputPath": {
+              "base": "dist/ng-router-outlet-data-demo",
+              "browser": ""
+            },
             "index": "projects/ng-router-outlet-data-demo/src/index.html",
             "browser": "projects/ng-router-outlet-data-demo/src/main.ts",
             "polyfills": [
@@ -536,7 +539,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/router-outlet-data/"
             },
             "development": {
               "optimization": false,

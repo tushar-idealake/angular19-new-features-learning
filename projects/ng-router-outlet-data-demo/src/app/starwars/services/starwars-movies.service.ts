@@ -9,6 +9,7 @@ function toStarWarsMovieMapper(fromData: RawStarWarsMovie) {
     openingCrawl: fromData.opening_crawl,
     releaseDate: fromData.release_date,
     episodeId: fromData.episode_id,
+    characters: fromData.characters,
   } as StarWarsMovie
 }
 

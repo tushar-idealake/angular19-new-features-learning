@@ -3,6 +3,7 @@ export type RawStarWarsMovie = {
 	opening_crawl: string;
   release_date: string;
   episode_id: number;
+  characters: string[];
 }
 
 export type StarWarsMovie = {
@@ -10,5 +11,6 @@ export type StarWarsMovie = {
 	openingCrawl: string;
   releaseDate: string;
   episodeId: number;
+  characters: string[];
 }
 

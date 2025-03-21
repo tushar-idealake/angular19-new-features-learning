@@ -32,6 +32,16 @@ export class StarWarsCharactersService {
         })
       )
   }
+  retrieveCharacterNameByUrl(url: string) {
+    return this.#httpClient.get<RawStarWarsCharacter>(url)
+      .pipe(
+        map((fromCharacter) => fromCharacter.name),
+        catchError((e) => {
+          console.error(e);
+          return of('')
+        })
+      )
+  }
 
   retrieveCharacters({ ids, isSith }: { ids: number[], isSith: boolean }) {
     const starWarsCharacterObservables = ids.map((id) => 

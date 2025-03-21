@@ -1,12 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, Signal } from '@angular/core';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { StarWarsMoviesService } from '../services/starwars-movies.service';
 import { StarWarsMovie } from '../types/starwars-movie.type';
+import { StarWarsCastComponent } from '../star-wars-cast/star-wars-cast.component';
 
 @Component({
   selector: 'app-starwars-movies',
-  imports: [],
+  imports: [StarWarsCastComponent],
   template: `
     <div>
       <h3 class="movies">Movies</h3>
@@ -22,6 +23,8 @@ import { StarWarsMovie } from '../types/starwars-movie.type';
             <p>Release Date: {{ c.releaseDate }}</p>
             <p>Opening Crawl: {{ c.openingCrawl }}</p>
             <hr />
+            @let characterUrl = c.characters;
+            <app-star-wars-cast [characterUrl]="characterUrl" />
           }
         }
       }

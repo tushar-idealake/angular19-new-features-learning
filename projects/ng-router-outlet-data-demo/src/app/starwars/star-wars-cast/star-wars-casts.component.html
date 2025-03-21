@@ -1,0 +1,9 @@
+<h4>Cast</h4>
+@if (castResource.hasValue()) {
+    <ol>
+    @for(name of castResource.value(); track name) {
+        <li>{{ name }}</li>
+    }
+    </ol>
+}
+<hr />

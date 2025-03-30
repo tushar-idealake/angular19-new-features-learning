@@ -1,16 +1,9 @@
 import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { toStarWarsFilmMapper } from './mappers/film.mapper';
+import { StarWarsMovie } from './types/starwars-movie.type';
 
-type X = {
-  url: string;
-  title: string;
-  openingCrawl: string;
-  releaseDate: string;
-  episodeId: number;
-}
-
-const starWarsFilmEquality = (b: X) => { 
+const starWarsFilmEquality = (b: StarWarsMovie) => { 
   console.log('equal', ![4,5,6].includes(b.episodeId));
   return ![4,5,6].includes(b.episodeId);
 }
@@ -26,11 +19,8 @@ export class StarwarsMovieComponent {
   requestUrl = computed(() => this.url() ? this.url() : undefined);
 
   filmResource = httpResource(this.requestUrl, {
-    equal: () => {
-      console.log('equal 2');
-      return true;
-    },
     parse: (raw) => toStarWarsFilmMapper(raw),
+    equal: (_, b: StarWarsMovie) => starWarsFilmEquality(b),
     defaultValue: undefined,
   });
 }

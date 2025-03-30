@@ -25,4 +25,7 @@ export class AppComponent {
     }
     return { ids: [4, 17, 44, 21, 67], isSith: true };
   });
+
+  url = signal({ value: 'https://swapi.dev/api/films/1/' });
+  characterInput = signal({ id: 1, isSith: false });
 }

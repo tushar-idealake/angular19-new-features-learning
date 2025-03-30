@@ -39,5 +39,5 @@ import { StarWarsCharacter } from '../starwars-card/types/starwars-character.typ
 export default class StarwarsCharacterComponent {
   fighter = inject(ROUTER_OUTLET_DATA) as Signal<StarWarsCharacter>;
 
-  films = computed(() => this.fighter().films);
+  films = computed(() => this.fighter().films.map((value) => ({ value })));
 }

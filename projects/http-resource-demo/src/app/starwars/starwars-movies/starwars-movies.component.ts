@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
 import { ROUTER_OUTLET_DATA } from '@angular/router';
-import { StarwarsMovieComponent } from './starwars-movie.component';
+import { StarWarsMovieComponent } from './starwars-movie.component';
 
 @Component({
   selector: 'app-starwars-movies',
-  imports: [StarwarsMovieComponent],
+  imports: [StarWarsMovieComponent],
   template: `
     <div>
       <h3 class="movies">Films</h3>
@@ -22,6 +22,6 @@ import { StarwarsMovieComponent } from './starwars-movie.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class StarwarsMoviesComponent {
-  urls = inject(ROUTER_OUTLET_DATA) as Signal<string[]>;
+export default class StarWarsMoviesComponent {
+  urls = inject(ROUTER_OUTLET_DATA) as Signal<{ value: string }[]>;
 }

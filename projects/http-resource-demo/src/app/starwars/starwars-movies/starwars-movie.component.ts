@@ -1,11 +1,12 @@
 import { httpResource } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { toStarWarsFilmMapper } from './mappers/film.mapper';
 import { StarWarsMovie } from './types/starwars-movie.type';
 
-const starWarsFilmEquality = (b: StarWarsMovie) => { 
-  console.log('equal', ![4,5,6].includes(b.episodeId));
-  return ![4,5,6].includes(b.episodeId);
+const starWarsFilmEquality = (b: StarWarsMovie | undefined) => { 
+  const isNotInTrilogy = typeof b !== 'undefined' && ![4, 5, 6].includes(b.episodeId);
+  console.log('equal', isNotInTrilogy);
+  return isNotInTrilogy;
 }
 
 @Component({
@@ -13,14 +14,13 @@ const starWarsFilmEquality = (b: StarWarsMovie) => {
   templateUrl: './starwars-movie.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StarwarsMovieComponent {
-  url = input.required<string>();
+export class StarWarsMovieComponent {
+  url = input.required<{ value: string }>();
 
-  requestUrl = computed(() => this.url() ? this.url() : undefined);
-
-  filmResource = httpResource(this.requestUrl, {
-    parse: (raw) => toStarWarsFilmMapper(raw),
-    equal: (_, b: StarWarsMovie) => starWarsFilmEquality(b),
-    defaultValue: undefined,
-  });
+  filmResource = httpResource(() => this.url() ? this.url().value : undefined, 
+  {
+      parse: (raw) => toStarWarsFilmMapper(raw),
+      equal: (a, b) => starWarsFilmEquality(b),
+      defaultValue: undefined,
+    });
 }

@@ -5,8 +5,8 @@
     <span>No data</span>
   } @else if (characterResource.hasValue()) {
     @let character = characterResource.value();
-    <span>{{ `Id: ${id}` }}</span>&nbsp;&nbsp;&nbsp;
-    <a [routerLink]="[id]" (click)="showFighter.emit(character)" 
+    <span>{{ `Id: ${character.id}` }}</span>&nbsp;&nbsp;&nbsp;
+    <a [routerLink]="[character.id]" (click)="showFighter.emit(character)" 
     >{{ character.name }}</a>
   }
 </div>

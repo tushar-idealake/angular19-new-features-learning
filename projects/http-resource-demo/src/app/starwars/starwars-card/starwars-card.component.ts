@@ -29,11 +29,8 @@ export class StarWarsCardComponent {
   id = computed(() => this.characterInput()?.id);
   isSith = computed(() => this.characterInput()?.isSith);
 
-  requestUrl = computed(() => 
-    this.characterInput() ? `https://swapi.py4e.com/api/people/${this.id()}` : undefined
-  );
-
-  characterResource = httpResource(this.requestUrl, 
+  characterResource = httpResource(() => 
+    this.characterInput() ? `https://swapi.py4e.com/api/people/${this.id()}` : undefined, 
   {
     parse: (raw) => 
       toStarWarsCharacterMapper(this.id(), this.isSith(),raw),

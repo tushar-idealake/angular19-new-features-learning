@@ -1,6 +1,6 @@
+import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { httpResource } from '@angular/common/http';
 import { toStarWarsCharacterMapper } from './mappers/character.mapper';
 import { StarWarsCharacter } from './types/starwars-character.type';
 
@@ -26,14 +26,17 @@ export class StarWarsCardComponent {
 
   showFighter = output<StarWarsCharacter>();
 
-  characterResource = httpResource(() => 
-    this.characterInput() ? `https://swapi.py4e.com/api/people/${this.characterInput().id}` : undefined, 
+  id = computed(() => this.characterInput()?.id);
+  isSith = computed(() => this.characterInput()?.isSith);
+
+  requestUrl = computed(() => 
+    this.characterInput() ? `https://swapi.py4e.com/api/people/${this.id()}` : undefined
+  );
+
+  characterResource = httpResource(this.requestUrl, 
   {
-    parse: (raw) => {
-      const id = this.characterInput().id;
-      const isSith = this.characterInput().isSith;
-      return toStarWarsCharacterMapper(id, isSith, raw);
-    },
+    parse: (raw) => 
+      toStarWarsCharacterMapper(this.id(), this.isSith(),raw),
     equal: (_, b) => starWarsCharacterEquality(b),
     defaultValue: undefined
   });
@@ -42,5 +45,4 @@ export class StarWarsCardComponent {
     return this.characterResource.error() ||
       this.characterResource.hasValue();
   });
-
 }

@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { httpResource } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { toStarWarsFilmMapper } from './mappers/film.mapper';
 
 type X = {
+  url: string;
   title: string;
   openingCrawl: string;
   releaseDate: string;
@@ -16,41 +17,20 @@ const starWarsFilmEquality = (b: X) => {
 
 @Component({
   selector: 'app-starwars-movie',
-  imports: [],
-  template: `
-    <div>
-      @if (filmResource.isLoading()) {
-          <p>Loading Film...</p>
-      } @else if (filmResource.error()) {
-          <p>Error: {{ filmResource.error() }}</p>
-      } @else {
-        Testing.....
-        @if (filmResource.hasValue()) {
-          @let c = filmResource.value();
-          <p><label>Title: </label>{{ c.title }}</p>
-          <p><label>Episode: </label>{{ c.episodeId }}</p>
-          <p>{{ ![4,5,6].includes(c.episodeId) }}</p>
-          <p><label>Release Date: </label>{{ c.releaseDate }}</p>
-          <p><label>Opening Crawl: </label>{{ c.openingCrawl }}</p>
-          <hr />
-        }
-      }     
-    </div>
-  `,
+  templateUrl: './starwars-movie.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StarwarsMovieComponent {
-  url = input('https://swapi.py4e.com/api/films/1/');
+  url = input.required<string>();
 
-  filmResource = httpResource(
-    () => this.url() ? this.url() : undefined,
-  {
-    parse: (raw) => toStarWarsFilmMapper(raw),
-    equal: (a, b) => { 
-      console.log('equal', a, b);
+  requestUrl = computed(() => this.url() ? this.url() : undefined);
+
+  filmResource = httpResource(this.requestUrl, {
+    equal: () => {
+      console.log('equal 2');
       return true;
-      //return starWarsFilmEquality(b)
     },
+    parse: (raw) => toStarWarsFilmMapper(raw),
     defaultValue: undefined,
   });
 }

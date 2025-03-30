@@ -1,0 +1,17 @@
+<div>
+    @if (filmResource.isLoading()) {
+        <p>Loading Film...</p>
+    } @else if (filmResource.error()) {
+        <p>Error: {{ filmResource.error() }}</p>
+    } @else {
+      @if (filmResource.hasValue()) {
+        @let c = filmResource.value();
+        <p><label>Url: </label>{{ c.url }}</p>
+        <p><label>Title: </label>{{ c.title }}</p>
+        <p><label>Episode: </label>{{ c.episodeId }}</p>
+        <p><label>Release Date: </label>{{ c.releaseDate }}</p>
+        <p><label>Opening Crawl: </label>{{ c.openingCrawl }}</p>
+        <hr />
+      }
+    }     
+</div>

@@ -9,7 +9,6 @@ import { StarwarsMovieComponent } from './starwars-movie.component';
     <div>
       <h3 class="movies">Films</h3>
       @for (url of urls(); track url) {
-        {{ url }}
         <app-starwars-movie [url]="url" />
       }
     </div>

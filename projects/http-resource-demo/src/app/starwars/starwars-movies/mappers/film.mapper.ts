@@ -1,5 +1,5 @@
 import { starWarsFilmSchema } from "../schemas/film.schema";
-import { StarWarsMovie } from '../types/starwars-movie.type';
+import { StarWarsFilm } from '../types/starwars-film.type';
 
 export function toStarWarsFilmMapper(raw: unknown) {
   try {
@@ -12,7 +12,7 @@ export function toStarWarsFilmMapper(raw: unknown) {
       openingCrawl: parsed.opening_crawl,
       releaseDate: parsed.release_date,
       episodeId: parsed.episode_id,
-    } as StarWarsMovie;
+    } as StarWarsFilm;
   } catch (e) {
     console.error(e);
     return undefined;

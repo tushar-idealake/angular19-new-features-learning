@@ -1,4 +1,4 @@
-export type StarWarsMovie = {
+export type StarWarsFilm = {
     url: string;
     title: string;
     openingCrawl: string;

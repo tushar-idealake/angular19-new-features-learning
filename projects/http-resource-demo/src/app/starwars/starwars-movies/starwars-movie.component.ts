@@ -1,9 +1,9 @@
 import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { toStarWarsFilmMapper } from './mappers/film.mapper';
-import { StarWarsMovie } from './types/starwars-movie.type';
+import { StarWarsFilm } from './types/starwars-film.type';
 
-const starWarsFilmEquality = (b: StarWarsMovie | undefined) => { 
+const starWarsFilmEquality = (b: StarWarsFilm | undefined) => { 
   const isNotInTrilogy = typeof b !== 'undefined' && ![4, 5, 6].includes(b.episodeId);
   console.log('equal', isNotInTrilogy);
   return isNotInTrilogy;

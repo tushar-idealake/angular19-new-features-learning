@@ -330,7 +330,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/http-resource-demo",
+            "outputPath": {
+              "base": "dist/http-resource-demo",
+              "browser": ""
+            },
             "index": "projects/http-resource-demo/src/index.html",
             "browser": "projects/http-resource-demo/src/main.ts",
             "polyfills": [],
@@ -361,7 +364,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-demo/"
             },
             "development": {
               "optimization": false,

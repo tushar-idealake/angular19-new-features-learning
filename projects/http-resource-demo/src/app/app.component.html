@@ -7,13 +7,4 @@
       <li><a [href]="pr" target="_blank">{{ pr }}</a></li>
     }
   </ul>
-  <div>
-    Select your allegiance:<br/>
-    <input type="radio" id="jedi" name="Jedi" value="jedi" [(ngModel)]="allegiance">
-    <label for="jedi">&nbsp;&nbsp;Jedi</label>&nbsp;&nbsp;&nbsp;
-    <input type="radio" id="sith" name="Sith" value="sith" [(ngModel)]="allegiance">
-    <label for="sith">&nbsp;&nbsp;Sith</label>
-  </div>
-  {{ `Selected allegiance: ${allegiance()}` }}
-  <router-outlet [routerOutletData]="fighterIds()" />
 </div>

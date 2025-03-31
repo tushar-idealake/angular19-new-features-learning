@@ -1,11 +1,7 @@
-import { ChangeDetectionStrategy, Component, computed, signal, VERSION } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
-import { FighterList } from './starwars/starwars-list/types/starwars-list.type';
+import { ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -17,15 +13,4 @@ export class AppComponent {
   ];
   name = 'httpResource equality function';
   description = 'httpResource to query data';
-
-  allegiance = signal('jedi');
-  fighterIds = computed<FighterList>(() => {
-    if (this.allegiance() == 'jedi') {
-      return { ids: [1, 10, 17, 20, 51, 52, 53, 32], isSith: false };
-    }
-    return { ids: [4, 17, 44, 21, 67], isSith: true };
-  });
-
-  url = signal({ value: 'https://swapi.dev/api/films/1/' });
-  characterInput = signal({ id: 1, isSith: false });
 }

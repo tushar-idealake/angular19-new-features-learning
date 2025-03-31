@@ -109,7 +109,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/untagged-template-literals-demo",
+            "outputPath": {
+              "base": "dist/untagged-template-literals-demo",
+              "browser": ""
+            },
             "index": "projects/untagged-template-literals-demo/src/index.html",
             "browser": "projects/untagged-template-literals-demo/src/main.ts",
             "polyfills": [
@@ -141,7 +144,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/untagged-template-literals-demo/"
             },
             "development": {
               "optimization": false,

@@ -22,12 +22,10 @@
     <hr />
 
     <p>Fresh Programming Joke with timestamp:</p>
-    @let value = jokeAudit() ?? undefined;
-    @if (value) {
-      <p><label>Id: </label><span>{{ value.id }}</span></p>
-      <p><label>Category: </label><span>{{ value.category }}</span></p>
-      <p><label>Joke: </label><span>{{ value.joke }}</span></p>
-      <p><label>Update #: </label><span>{{ value.numUpdates }}</span></p>
-    }
+    @let value = jokeAudit();
+    <p><label>Id: </label><span>{{ value.id }}</span></p>
+    <p><label>Category: </label><span>{{ value.category }}</span></p>
+    <p><label>Joke: </label><span>{{ value.joke }}</span></p>
+    <p><label>Update #: </label><span>{{ value.numUpdates }}</span></p>
   </div>
 </div>

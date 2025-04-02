@@ -2,12 +2,6 @@ import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, inject, Injector, linkedSignal, signal, VERSION } from '@angular/core';
 import { Joke, JokeAudit, jokeSchema } from './schemas/joke.schema';
 
-const jokeEquality = (a: Joke, b: Joke) => {
-  const isEqual = a.id == b.id;
-  console.log('isEqual', a.id, b.id, isEqual);
-  return isEqual;
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,8 +23,8 @@ export class AppComponent {
   jokeResource = httpResource(() => 
   this.category() ? 
   `https://v2.jokeapi.dev/joke/${this.category()}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single&idRange=1-5`: undefined, {
-    parse: (raw) => jokeSchema.parse(raw),
-    equal: (a, b) => jokeEquality(a, b),
+    parse: jokeSchema.parse,
+    equal: (a, b) => a.id === b.id,
     defaultValue: {
       id: -1,
       error: false,

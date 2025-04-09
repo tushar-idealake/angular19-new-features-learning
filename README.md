@@ -2,12 +2,32 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0-rc.0.
 
+## Github Pages
+
+- AfterRenderEffect demo
+- NgComponentOutlet demo
+- NgRouterOutletData demo
+- Untagged Template Literals demo
+- @for track expression allow temporary variables demo 
+- httpResource equality function demo
+- httpResource subcontractors demo
+- httpResource + httpInterceptor demo
+- httpResource + HttpContext demo
+
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+ng serve --project=ngComponentOutletInstanceDemo
+ng serve --project=untaggedTemplateLiteralsDemo
+ng serve --project=trackExpressionRequireTemporaryVariables
+ng serve --project=httpResourceDemo
+ng serve --project=afterRenderEffectDemo
+ng serve --project=ngRouterOutletDataDemo
+ng serve --project=httpResourceInterceptorDemo
+ng serve --project=httpResourceSubcontractorDemo
+ng serve --project=httpResourceHttpContextDemo
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.

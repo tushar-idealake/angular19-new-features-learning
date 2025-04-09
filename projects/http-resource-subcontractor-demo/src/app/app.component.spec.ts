@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'httpResourceMethodsDemo' title`, () => {
+  it(`should have the 'httpResourceSubcontractorDemo' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('httpResourceMethodsDemo');
+    expect(app.title).toEqual('httpResourceSubcontractorDemo');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, httpResourceMethodsDemo');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, httpResourceSubcontractorDemo');
   });
 });

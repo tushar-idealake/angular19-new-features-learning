@@ -605,105 +605,6 @@
         }
       }
     },
-    "httpResourceMethodsDemo": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "projects/http-resource-methods-demo",
-      "sourceRoot": "projects/http-resource-methods-demo/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:application",
-          "options": {
-            "outputPath": {
-              "base": "dist/http-resource-methods-demo",
-              "browser": ""
-            },
-            "index": "projects/http-resource-methods-demo/src/index.html",
-            "browser": "projects/http-resource-methods-demo/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/http-resource-methods-demo/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/http-resource-methods-demo/public"
-              }
-            ],
-            "styles": [
-              "projects/http-resource-methods-demo/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all",
-              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-methods-demo/"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "httpResourceMethodsDemo:build:production"
-            },
-            "development": {
-              "buildTarget": "httpResourceMethodsDemo:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "projects/http-resource-methods-demo/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/http-resource-methods-demo/public"
-              }
-            ],
-            "styles": [
-              "projects/http-resource-methods-demo/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
     "httpResourceInterceptorDemo": {
       "projectType": "application",
       "schematics": {
@@ -797,6 +698,204 @@
             ],
             "styles": [
               "projects/http-resource-interceptor-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "httpResourceSubcontractorDemo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/http-resource-subcontractor-demo",
+      "sourceRoot": "projects/http-resource-subcontractor-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": { 
+              "base": "dist/http-resource-subcontractor-demo",
+              "browser": ""
+            },
+            "index": "projects/http-resource-subcontractor-demo/src/index.html",
+            "browser": "projects/http-resource-subcontractor-demo/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/http-resource-subcontractor-demo/public"
+              }
+            ],
+            "styles": [
+              "projects/http-resource-subcontractor-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-subcontractor-demo/"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "httpResourceSubcontractorDemo:build:production"
+            },
+            "development": {
+              "buildTarget": "httpResourceSubcontractorDemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/http-resource-subcontractor-demo/public"
+              }
+            ],
+            "styles": [
+              "projects/http-resource-subcontractor-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "httpResourceHttpContextDemo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/http-resource-http-context-demo",
+      "sourceRoot": "projects/http-resource-http-context-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath":{ 
+              "base": "dist/http-resource-http-context-demo",
+              "browser": ""
+            },
+            "index": "projects/http-resource-http-context-demo/src/index.html",
+            "browser": "projects/http-resource-http-context-demo/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/http-resource-http-context-demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/http-resource-http-context-demo/public"
+              }
+            ],
+            "styles": [
+              "projects/http-resource-http-context-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-http-context-demo/"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "httpResourceHttpContextDemo:build:production"
+            },
+            "development": {
+              "buildTarget": "httpResourceHttpContextDemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/http-resource-http-context-demo/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/http-resource-http-context-demo/public"
+              }
+            ],
+            "styles": [
+              "projects/http-resource-http-context-demo/src/styles.scss"
             ],
             "scripts": []
           }

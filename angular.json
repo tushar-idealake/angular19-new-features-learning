@@ -216,7 +216,6 @@
             "index": "projects/track-expression-require-temporary-variables/src/index.html",
             "browser": "projects/track-expression-require-temporary-variables/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/track-expression-require-temporary-variables/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -275,8 +274,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/track-expression-require-temporary-variables/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -428,7 +425,6 @@
             "index": "projects/after-render-effect-demo/src/index.html",
             "browser": "projects/after-render-effect-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/after-render-effect-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -487,8 +483,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/after-render-effect-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -527,7 +521,6 @@
             "index": "projects/ng-router-outlet-data-demo/src/index.html",
             "browser": "projects/ng-router-outlet-data-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/ng-router-outlet-data-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -586,8 +579,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/ng-router-outlet-data-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -626,7 +617,6 @@
             "index": "projects/http-resource-interceptor-demo/src/index.html",
             "browser": "projects/http-resource-interceptor-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/http-resource-interceptor-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -685,8 +675,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/http-resource-interceptor-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -725,7 +713,6 @@
             "index": "projects/http-resource-subcontractor-demo/src/index.html",
             "browser": "projects/http-resource-subcontractor-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -784,8 +771,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -824,7 +809,6 @@
             "index": "projects/http-resource-http-context-demo/src/index.html",
             "browser": "projects/http-resource-http-context-demo/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/http-resource-http-context-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -883,8 +867,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/http-resource-http-context-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",

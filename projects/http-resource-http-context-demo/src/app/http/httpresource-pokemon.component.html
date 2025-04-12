@@ -1,0 +1,15 @@
+<div>  
+  <button (click)="imageSignal.set(imageUrl)">
+    <ng-content>button</ng-content>
+  </button>
+  <p>{{ `Url: ${imageSignal()}` }}</p>
+  <p>{{ `Progress: ${imgProgress()}`}}</p>
+  @if (imgResourceRef.isLoading()) {
+    <p>Loading...</p>
+  } @else if (imgError()) {
+    <p><label>Error: </label><span>{{ imgError()?.message }}</span></p>
+  } @else if (imgSrc()) {
+    <label>Pikachu:</label>
+    <img [src]="imgSrc()" />
+  }
+</div>

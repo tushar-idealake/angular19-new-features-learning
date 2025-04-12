@@ -1,0 +1,15 @@
+<div>
+  <button (click)="audioSignal.set(audioUrl)">
+    <ng-content>button</ng-content>
+  </button>
+  <p>{{ `Url: ${audioSignal()}` }}</p>
+  <p>{{ `Progress: ${audioProgress()}` }}</p>
+  @if (audioResourceRef.isLoading()) {
+    <p>Loading...</p>
+  } @else if (audioError()) {
+    <p><label>Error: </label><span>{{ audioError()?.message }}</span></p>
+  } @else if (audioSrc()) {
+    <label>Listen to Pikachu:</label>
+    <audio [src]="audioSrc()" controls></audio>
+  }
+</div>

@@ -1,0 +1,13 @@
+<div>
+  <p>httpResource.text function</p>
+  
+  <button (click)="textSignal.set(textUrl)">Load text</button>
+  <p>{{ `Url: ${textSignal()}` }}</p>
+  @if (textResource.isLoading()) {
+    <p>Loading...</p>
+  } @else if (textError()) {
+    <p><label>Error: </label><span>{{ textError()?.message }}</span></p>
+  } @else if (textResource.hasValue()) {
+    <p><label>Text: </label><span>{{ textResource.value() }}</span></p>
+  }
+</div>

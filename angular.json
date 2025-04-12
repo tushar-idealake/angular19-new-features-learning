@@ -692,38 +692,38 @@
         }
       }
     },
-    "httpResourceSubcontractorDemo": {
+    "httpResourceSubconstructorDemo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/http-resource-subcontractor-demo",
-      "sourceRoot": "projects/http-resource-subcontractor-demo/src",
+      "root": "projects/http-resource-subconstructor-demo",
+      "sourceRoot": "projects/http-resource-subconstructor-demo/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": { 
-              "base": "dist/http-resource-subcontractor-demo",
+              "base": "dist/http-resource-subconstructor-demo",
               "browser": ""
             },
-            "index": "projects/http-resource-subcontractor-demo/src/index.html",
-            "browser": "projects/http-resource-subcontractor-demo/src/main.ts",
+            "index": "projects/http-resource-subconstructor-demo/src/index.html",
+            "browser": "projects/http-resource-subconstructor-demo/src/main.ts",
             "polyfills": [
             ],
-            "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.app.json",
+            "tsConfig": "projects/http-resource-subconstructor-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/http-resource-subcontractor-demo/public"
+                "input": "projects/http-resource-subconstructor-demo/public"
               }
             ],
             "styles": [
-              "projects/http-resource-subcontractor-demo/src/styles.scss"
+              "projects/http-resource-subconstructor-demo/src/styles.scss"
             ],
             "scripts": []
           },
@@ -742,7 +742,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-subcontractor-demo/"
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-subconstructor-demo/"
             },
             "development": {
               "optimization": false,
@@ -756,10 +756,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "httpResourceSubcontractorDemo:build:production"
+              "buildTarget": "httpResourceSubconstructorDemo:build:production"
             },
             "development": {
-              "buildTarget": "httpResourceSubcontractorDemo:build:development"
+              "buildTarget": "httpResourceSubconstructorDemo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -772,16 +772,16 @@
           "options": {
             "polyfills": [
             ],
-            "tsConfig": "projects/http-resource-subcontractor-demo/tsconfig.spec.json",
+            "tsConfig": "projects/http-resource-subconstructor-demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/http-resource-subcontractor-demo/public"
+                "input": "projects/http-resource-subconstructor-demo/public"
               }
             ],
             "styles": [
-              "projects/http-resource-subcontractor-demo/src/styles.scss"
+              "projects/http-resource-subconstructor-demo/src/styles.scss"
             ],
             "scripts": []
           }

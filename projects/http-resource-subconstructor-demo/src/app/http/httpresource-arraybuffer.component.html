@@ -1,0 +1,15 @@
+<div>
+  <p>httpResource.arrayBuffer function</p>
+  
+  <button (click)="imageSignal.set(imageUrl)">Load arrayBuffer data</button>
+  <p>{{ `Url: ${imageSignal()}` }}</p>
+  <p>{{ `Progress: ${imgProgress()}`}}</p>
+  @if (imgResource.isLoading()) {
+    <p>Loading...</p>
+  } @else if (imgError()) {
+    <p><label>Error: </label><span>{{ imgError()?.message }}</span></p>
+  } @else if (bufferedImage()) {
+    <label>Pikachu:</label>
+    <img [src]="bufferedImage()" />
+  }
+</div>

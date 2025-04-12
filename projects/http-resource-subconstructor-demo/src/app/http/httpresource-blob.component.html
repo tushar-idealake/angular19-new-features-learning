@@ -1,0 +1,15 @@
+<div>
+  <p>httpResource.blob function</p>
+  
+  <button (click)="audioSignal.set(audioUrl)">Load blob data</button>
+  <p>{{ `Url: ${audioSignal()}` }}</p>
+  <p>{{ `Progress: ${audioProgress()}` }}</p>
+  @if (audioResource.isLoading()) {
+    <p>Loading...</p>
+  } @else if (audioError()) {
+    <p><label>Error: </label><span>{{ audioError()?.message }}</span></p>
+  } @else if (blobURL()) {
+    <label>Listen to Pikachu:</label>
+    <audio [src]="blobURL()" controls></audio>
+  }
+</div>

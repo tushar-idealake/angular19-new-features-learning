@@ -1,1 +1,1 @@
-export type BinaryResponseType = 'arraybuffer' | 'blob';
+export type BinaryResponseType = 'arraybuffer' | 'blob' | '';

@@ -1,7 +1,8 @@
+import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
-import { HttpContext, httpResource } from '@angular/common/http';
-import { RESPONSE_TYPE } from './http-context-token.constant';
+import { BinaryResponseType } from './type/response-type.type';
 import { makeResourceRefStatus } from './utils/binary-resource-ref.util';
+import { makeHttpRequest } from './utils/http-request.util';
 import { createURLFromBinary } from './utils/object-url.util';
 
 const PIKACHU_OGG_URL = 'https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/25.ogg';
@@ -14,14 +15,10 @@ const PIKACHU_OGG_URL = 'https://raw.githubusercontent.com/PokeAPI/cries/main/cr
 export class HttpResourcePokemonAudioComponent {
   audioUrl = PIKACHU_OGG_URL;
   audioSignal = signal('');
-  responseType = input<'arraybuffer' | 'blob'>('arraybuffer');
+  responseType = input<BinaryResponseType>('');
 
   audioResourceRef = httpResource(
-    () => this.audioSignal() ? { 
-      url: this.audioSignal(),
-      reportProgress: true,
-      context: new HttpContext().set(RESPONSE_TYPE, this.responseType())
-    } : undefined
+    () => this.audioSignal() ? makeHttpRequest(this.audioSignal(), this.responseType()) : undefined
   );
 
   resourceRefStatus = makeResourceRefStatus(this.audioResourceRef);

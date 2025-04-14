@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
-import { HttpResourceBlobComponent } from './http/httpresource-blob.component';
 import { HttpResourceArrayBufferComponent } from './http/httpresource-arraybuffer.component';
+import { HttpResourceBlobComponent } from './http/httpresource-blob.component';
 import { HttpResourceTextComponent } from './http/httpresource-text.component';
 
 @Component({

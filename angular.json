@@ -902,7 +902,6 @@
             "index": "projects/http-resource-error-status-code/src/index.html",
             "browser": "projects/http-resource-error-status-code/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/http-resource-error-status-code/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -960,8 +959,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/http-resource-error-status-code/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",

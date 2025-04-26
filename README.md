@@ -13,6 +13,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 - httpResource subcontractors demo
 - httpResource + httpInterceptor demo
 - httpResource + HttpContext demo
+- httpResource + status code demo
 
 ## Development server
 
@@ -28,6 +29,7 @@ ng serve --project=ngRouterOutletDataDemo
 ng serve --project=httpResourceInterceptorDemo
 ng serve --project=httpResourceSubcontractorDemo
 ng serve --project=httpResourceHttpContextDemo
+ng serve --project=httpResourceErrorStatusCode
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.

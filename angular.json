@@ -898,7 +898,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/http-resource-error-status-code",
+            "outputPath":{ 
+              "base": "dist/http-resource-error-status-code",
+              "browser": ""
+            },
             "index": "projects/http-resource-error-status-code/src/index.html",
             "browser": "projects/http-resource-error-status-code/src/main.ts",
             "polyfills": [
@@ -930,7 +933,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://railsstudent.github.io/angular19-new-features/http-resource-error-status-code/"
             },
             "development": {
               "optimization": false,

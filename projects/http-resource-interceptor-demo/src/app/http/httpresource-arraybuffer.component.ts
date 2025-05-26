@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
 import { httpResource } from '@angular/common/http';
 import { makeResourceRefStatus } from './http-resource-ref.util';
 
-const PIKACHU_IMAGE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png';
+const PIKACHU_IMAGE_URL = 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Pizigani_1367_Chart_10MB.jpg';
 
 @Component({
   selector: 'app-resource-array-buffer',
